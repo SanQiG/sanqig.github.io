@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>策略模式 | FE-Summary</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="favicon.ico">
+    <meta name="description" content="等苦尽甘来那一天山河星月都做谢礼">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.9da83e1b.js" as="script"><link rel="preload" href="/assets/js/2.12e0f347.js" as="script"><link rel="preload" href="/assets/js/56.ec130ee9.js" as="script"><link rel="prefetch" href="/assets/js/10.5e2ab691.js"><link rel="prefetch" href="/assets/js/11.6b70a53a.js"><link rel="prefetch" href="/assets/js/12.c25b2926.js"><link rel="prefetch" href="/assets/js/13.7f060f16.js"><link rel="prefetch" href="/assets/js/14.e817b1a9.js"><link rel="prefetch" href="/assets/js/15.a6c8c20a.js"><link rel="prefetch" href="/assets/js/16.6ad48d76.js"><link rel="prefetch" href="/assets/js/17.84a94a35.js"><link rel="prefetch" href="/assets/js/18.2c777c61.js"><link rel="prefetch" href="/assets/js/19.fc85dc29.js"><link rel="prefetch" href="/assets/js/20.d8cf2d51.js"><link rel="prefetch" href="/assets/js/21.586a8e85.js"><link rel="prefetch" href="/assets/js/22.31160461.js"><link rel="prefetch" href="/assets/js/23.fcd2b6bf.js"><link rel="prefetch" href="/assets/js/24.88a8050d.js"><link rel="prefetch" href="/assets/js/25.18eba8c9.js"><link rel="prefetch" href="/assets/js/26.08a27ec4.js"><link rel="prefetch" href="/assets/js/27.11ff627d.js"><link rel="prefetch" href="/assets/js/28.a125bb40.js"><link rel="prefetch" href="/assets/js/29.43230289.js"><link rel="prefetch" href="/assets/js/3.a0451ac5.js"><link rel="prefetch" href="/assets/js/30.659ef25f.js"><link rel="prefetch" href="/assets/js/31.4efeb65e.js"><link rel="prefetch" href="/assets/js/32.31bda727.js"><link rel="prefetch" href="/assets/js/33.4736e752.js"><link rel="prefetch" href="/assets/js/34.1752dec4.js"><link rel="prefetch" href="/assets/js/35.f315b090.js"><link rel="prefetch" href="/assets/js/36.2c532a4e.js"><link rel="prefetch" href="/assets/js/37.9a6c050f.js"><link rel="prefetch" href="/assets/js/38.85c03864.js"><link rel="prefetch" href="/assets/js/39.f1f59c51.js"><link rel="prefetch" href="/assets/js/4.e7c996f5.js"><link rel="prefetch" href="/assets/js/40.934d0964.js"><link rel="prefetch" href="/assets/js/41.880c60e8.js"><link rel="prefetch" href="/assets/js/42.5369c313.js"><link rel="prefetch" href="/assets/js/43.e0207eaf.js"><link rel="prefetch" href="/assets/js/44.46a528f7.js"><link rel="prefetch" href="/assets/js/45.0accf2bb.js"><link rel="prefetch" href="/assets/js/46.e0321209.js"><link rel="prefetch" href="/assets/js/47.a4474d31.js"><link rel="prefetch" href="/assets/js/48.ea9efe09.js"><link rel="prefetch" href="/assets/js/49.92500f79.js"><link rel="prefetch" href="/assets/js/5.6eff8140.js"><link rel="prefetch" href="/assets/js/50.dc9ec4de.js"><link rel="prefetch" href="/assets/js/51.720e08aa.js"><link rel="prefetch" href="/assets/js/52.56131ccf.js"><link rel="prefetch" href="/assets/js/53.61443fa0.js"><link rel="prefetch" href="/assets/js/54.e074ba4d.js"><link rel="prefetch" href="/assets/js/55.3856528b.js"><link rel="prefetch" href="/assets/js/57.68b0b5f5.js"><link rel="prefetch" href="/assets/js/58.6b501691.js"><link rel="prefetch" href="/assets/js/59.528f6f28.js"><link rel="prefetch" href="/assets/js/6.17d5dd20.js"><link rel="prefetch" href="/assets/js/60.b87b67d5.js"><link rel="prefetch" href="/assets/js/7.65139cb0.js"><link rel="prefetch" href="/assets/js/8.c9d7da10.js"><link rel="prefetch" href="/assets/js/9.3e6ea104.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">FE-Summary</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/summary/" class="nav-link router-link-active">
+  前端积累
+</a></div><div class="nav-item"><a href="https://github.com/SanQiG" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/summary/" class="nav-link router-link-active">
+  前端积累
+</a></div><div class="nav-item"><a href="https://github.com/SanQiG" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/summary/" aria-current="page" class="sidebar-link">Front-End Summary</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>TypeScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Linux</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Knowledge</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="策略模式"><a href="#策略模式" class="header-anchor">#</a> 策略模式</h1> <h2 id="介绍"><a href="#介绍" class="header-anchor">#</a> 介绍</h2> <p>策略模式定义了算法家族，分别封装起来，让他们之间可以互相替换，此模式让算法的变化不会影响到使用算法的客户。</p> <h2 id="正文"><a href="#正文" class="header-anchor">#</a> 正文</h2> <p>在理解策略模式之前，先来一个例子，一般情况下，如果我们要做数据合法性验证，很多时候都是按照switch语句来判断，但是这就带来几个问题，首先如果增加需求的话，我们还要再次修改这段代码以增加逻辑，而且在进行单元测试的时候也会越来越复杂，代码如下：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> validator <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">validate</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">switch</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token string">&quot;isNonEmpty&quot;</span><span class="token operator">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">&quot;isNumber&quot;</span><span class="token operator">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">&quot;isAlphaNum&quot;</span><span class="token operator">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token keyword">default</span><span class="token operator">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;isNonEmpty&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>那如何来避免上述代码中的问题呢，根据策略模式，我们可以将相同的工作代码单独封装成不同的类，然后通过统一的策略处理类来处理：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> validator <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 所有可以的验证规则处理类存放的地方，后面单独定义</span>
+    types<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    
+    <span class="token comment">// 验证类型所对应的错误消息</span>
+    messages<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    
+    config<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    
+    <span class="token comment">// 暴露公开的验证方法</span>
+    <span class="token comment">// 传入的参数是键值对</span>
+    <span class="token function-variable function">validate</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> i<span class="token punctuation">,</span> msg<span class="token punctuation">,</span> type<span class="token punctuation">,</span> checker<span class="token punctuation">,</span> result_ok<span class="token punctuation">;</span>
+        
+        <span class="token comment">// 清空所有的错误信息</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>messages <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token keyword">in</span> data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                type <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>config<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// 根据key查询是否存在验证规则</span>
+                checker <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>types<span class="token punctuation">[</span>type<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// 获取验证规则的验证类</span>
+                
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// 如果验证规则不存在则不处理</span>
+                    <span class="token keyword">continue</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>checker<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// 如果验证规则类不存在，抛出异常</span>
+                    <span class="token keyword">throw</span> <span class="token punctuation">{</span>
+                        name<span class="token operator">:</span> <span class="token string">&quot;ValidationError&quot;</span><span class="token punctuation">,</span>
+                        message<span class="token operator">:</span> <span class="token string">&quot;No handler to validate type &quot;</span> <span class="token operator">+</span> type
+                    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                
+                result_ok <span class="token operator">=</span> checker<span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span>data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 使用查到的单个验证类进行验证</span>
+                
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>result_ok<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    msg <span class="token operator">=</span> <span class="token string">&quot;Invalid value for *&quot;</span> <span class="token operator">+</span> i <span class="token operator">+</span> <span class="token string">&quot;*, &quot;</span> <span class="token operator">+</span> checker<span class="token punctuation">.</span>instructions<span class="token punctuation">;</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>messages<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hasErrors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    
+    <span class="token comment">// helper</span>
+    <span class="token function-variable function">hasErrors</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>messages<span class="token punctuation">.</span>length <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>然后剩下的工作，就是定义types里存放的各种验证类了：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 验证给定的值是否不为空</span>
+validator<span class="token punctuation">.</span>types<span class="token punctuation">.</span>isNonEmpty <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">validate</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> value <span class="token operator">!==</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    instructions<span class="token operator">:</span> <span class="token string">&quot;传入的值不能为空&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 验证给定的值是否是数字</span>
+validator<span class="token punctuation">.</span>types<span class="token punctuation">.</span>isNumber <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">validate</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">!</span><span class="token function">isNaN</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    instructions<span class="token operator">:</span> <span class="token string">&quot;传入的值只能是合法的数字&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 验证给定的值是否只是字母或数字</span>
+validator<span class="token punctuation">.</span>types<span class="token punctuation">.</span>isAlphaNum <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">validate</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">!</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[^a-z0-9]</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    instructions<span class="token operator">:</span> <span class="token string">&quot;传入的值只能保护字母和数字，不能包含特殊字符&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>使用的时候，我们首先要定义需要验证的数据集合，然后还需要定义各种数据需要验证的规则类型，代码如下：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token punctuation">{</span>
+	first_name<span class="token operator">:</span> <span class="token string">&quot;Jack&quot;</span><span class="token punctuation">,</span>
+    last_name<span class="token operator">:</span> <span class="token string">&quot;Gan&quot;</span><span class="token punctuation">,</span>
+    age<span class="token operator">:</span> <span class="token string">&quot;unknown&quot;</span><span class="token punctuation">,</span>
+    username<span class="token operator">:</span> <span class="token string">&quot;JackGan&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+validator<span class="token punctuation">.</span>config <span class="token operator">=</span> <span class="token punctuation">{</span>
+	first_name<span class="token operator">:</span> <span class="token string">&quot;isNonEmpty&quot;</span><span class="token punctuation">,</span>
+    age<span class="token operator">:</span> <span class="token string">&quot;isNumber&quot;</span><span class="token punctuation">,</span>
+    username<span class="token operator">:</span> <span class="token string">&quot;isAlphaNum&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>最后，获取验证结果的代码：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">if</span> <span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span>messages<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&quot;\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>策略模式定义了一系列算法，从概念上来讲，所有的这些算法都是做相同的事情，只是实现不同，他可以以相同的方式调用所有的方法，减少了各种算法类与使用算法类之间的耦合。</p> <p>从另一个层面上来说，单独定义算法类，也方便了单元测试，因为可以通过自己的算法进行单独测试。</p> <p>实践中，不仅可以封装算法，也可以用来封装几乎任何类型的规则，是要在分析过程中需要在不同时间应用不同的业务规则，就可以考虑是要策略模式来处理各种变化。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">5/13/2021, 2:29:34 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9da83e1b.js" defer></script><script src="/assets/js/2.12e0f347.js" defer></script><script src="/assets/js/56.ec130ee9.js" defer></script>
+  </body>
+</html>
